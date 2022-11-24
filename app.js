@@ -1,11 +1,13 @@
 //SELECTORS
+
 const input = document.querySelector(".todo-input");
 const submitBtn = document.querySelector(".submit-btn");
 const todoList = document.querySelector(".todo-list");
-console.log(todoList);
 
 //EVENT LISTENERS
+
 submitBtn.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteComplete);
 
 //FUNCTIONS
 
@@ -38,4 +40,27 @@ function addTodo(e) {
   todoList.appendChild(todoDiv);
   //clear input value
   input.value = "";
+}
+
+function deleteComplete(e) {
+  console.log(e.target);
+  const clickedBtn = e.target;
+
+  //Delete
+  if (clickedBtn.classList[0] === "delete-btn") {
+    const todo = clickedBtn.parentElement;
+
+    //Add class for animation
+    //'transitionend' triggers function after class is added
+    todo.classList.add("deleted");
+    todo.addEventListener("transitionend", function () {
+      todo.remove();
+    });
+  }
+
+  //Complete
+  if (clickedBtn.classList[0] === "complete-btn") {
+    const todo = clickedBtn.parentElement;
+    todo.classList.toggle("completed");
+  }
 }

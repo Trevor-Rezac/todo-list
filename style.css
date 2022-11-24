@@ -46,6 +46,7 @@ form button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all .5s ease;
 }
 
 .todo-list {
@@ -80,4 +81,19 @@ form button:hover {
 .complete-btn:hover, .delete-btn:hover {
   background: #d5b9b2;
   color: #582C4D;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.deleted {
+  transform: translateX(-5rem);
+  opacity: 0;
 }
