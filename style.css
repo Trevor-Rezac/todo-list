@@ -22,6 +22,10 @@ header, form {
   align-items: center;
 }
 
+form input {
+  margin-left: .5rem;
+}
+
 form input, form button{
   padding: .5rem;
   font-size: 1.2rem;
@@ -96,4 +100,44 @@ form button:hover {
 .deleted {
   transform: translateX(-5rem);
   opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+
+}
+
+select {
+  color: #582C4D;
+  width: 7rem;
+  cursor: pointer;
+  padding: .4rem;
+}
+
+.select {
+  margin: .5rem;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: white;
+  color:#582C4D;
+  top: 0;
+  right: 0;
+  padding: .25rem;
+  pointer-events: none;
+  transition: all .3s ease;
+}
+
+.select:hover::after {
+  background: #582C4D;
+  color: white;
 }

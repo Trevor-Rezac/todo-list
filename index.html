@@ -13,12 +13,21 @@
 </head>
 <body>
   <header class='app-header'>Todo List</header>
+  
   <section class='form-container'>
+    
     <form>
       <input type='text' name='todo-input' class='todo-input'>
       <button type='submit' class='submit-btn'>
         <i class='fas fa-plus-square'></i>
       </button>
+      <div class="select">
+        <select name="todos" class='filter'>
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
+      </div>
     </form>
   </section>
   <section class='list-container'>
