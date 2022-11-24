@@ -122,7 +122,7 @@ select {
   margin: .5rem;
   position: relative;
   overflow: hidden;
-  
+  border-radius: 5px;
 }
 
 .select::after {
@@ -135,6 +135,7 @@ select {
   padding: .25rem;
   pointer-events: none;
   transition: all .3s ease;
+  
 }
 
 .select:hover::after {
